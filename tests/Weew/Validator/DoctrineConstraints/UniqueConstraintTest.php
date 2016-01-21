@@ -14,8 +14,16 @@ class UniqueConstraintTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse($c->check([]));
     }
 
-    public function test_to_array() {
+    public function test_get_options() {
         $c = new UniqueConstraint('foo', new FakeRepository());
-        $this->assertEquals(['column' => 'foo'], $c->toArray());
+        $this->assertEquals(['column' => 'foo'], $c->getOptions());
+    }
+
+    public function test_get_message() {
+        $c = new UniqueConstraint('foo', new FakeRepository(), 'foo');
+        $this->assertEquals('foo', $c->getMessage());
+
+        $c = new UniqueConstraint('foo', new FakeRepository());
+        $this->assertNotNull($c->getMessage());
     }
 }

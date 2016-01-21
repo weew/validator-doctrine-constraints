@@ -20,14 +20,25 @@ class UniqueConstraint implements IConstraint {
     protected $repository;
 
     /**
+     * @var string
+     */
+    protected $message;
+
+    /**
      * UniqueConstraint constructor.
      *
      * @param $column
      * @param ObjectRepository $repository
+     * @param null $message
      */
-    public function __construct($column, ObjectRepository $repository) {
+    public function __construct(
+        $column,
+        ObjectRepository $repository,
+        $message = null
+    ) {
         $this->column = $column;
         $this->repository = $repository;
+        $this->message = $message;
     }
 
     /**
@@ -47,9 +58,20 @@ class UniqueConstraint implements IConstraint {
     }
 
     /**
+     * @return string
+     */
+    public function getMessage() {
+        if ($this->message !== null) {
+            return $this->message;
+        }
+
+        return 'This value is not available.';
+    }
+
+    /**
      * @return array
      */
-    public function toArray() {
+    public function getOptions() {
         return [
             'column' => $this->column,
         ];
