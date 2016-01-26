@@ -52,8 +52,7 @@ class UniqueConstraint implements IConstraint {
         $this->repository = $repository;
         $this->message = $message;
 
-        $this->controlColumn = 'id';
-        $this->controlProperty = 'id';
+        $this->allowIfEqual('id', 'id');
     }
 
     /**

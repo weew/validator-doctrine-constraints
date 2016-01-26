@@ -25,7 +25,6 @@ class UniqueConstraintTest extends PHPUnit_Framework_TestCase {
         );
 
         $c = new UniqueConstraint('foo', new FakeRepository());
-        $c->allowIfEqual('id', 'id');
         $this->assertTrue(
             $c->check('multiple', new ValidationData(['id' => 1]))
         );
