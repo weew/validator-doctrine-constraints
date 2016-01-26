@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "weew/php-validator": "^2.1",
+        "weew/php-validator": "^3.0",
         "doctrine/orm": "^2.5"
     },
     "require-dev": {
