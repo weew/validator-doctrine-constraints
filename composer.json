@@ -1,6 +1,6 @@
 {
-    "name": "weew/php-validator-doctrine-constraints",
-    "description": "Doctrine specific constraints for the weew/php-validator package.",
+    "name": "weew/validator-doctrine-constraints",
+    "description": "Doctrine specific constraints for the weew/validator package.",
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "weew/php-validator": "^3.0",
+        "weew/validator": "^3.0",
         "doctrine/orm": "^2.5"
     },
     "require-dev": {
